@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 from netmiko import ConnectHandler
 
 app = Flask(__name__)
@@ -17,7 +17,7 @@ def index():
             output = net_connect.send_command(request.form["command"])
         return render_template('index.html', output=output)
     else:
-        return render_template('index.html', output=output)
+        return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
