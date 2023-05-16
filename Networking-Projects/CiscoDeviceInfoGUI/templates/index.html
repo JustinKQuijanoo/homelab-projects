@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>RoP Infrastructure Services</title>
+</head>
+<body>
+    <header>
+        <img src="https://dynamicmedia.zuza.com/zz/m/original_/4/6/465dcdbe-9668-40c1-9f2c-49277296f484/N_BM_proposed_peel_logo_Super_Portrait.jpg" alt="Region of Peel Logo" class="logo">
+        <h1>Infrastructure Services</h1>
+        <!-- <h2>Cisco Device Info GUI</h2> -->
+    </header>
+    
+    <div class="credentials">
+        <h2>Device Details</h4>
+        <form method="post">
+
+            <label for="device">Type Device IP</label>
+            <input type="text" name="device" id="device"><br>
+
+            <label for="username">Type Username</label>
+            <input type="text" name="username" id="username"><br>
+
+            <label for="password">Type Password:</label>
+            <input type="password" name="password" id="password"><br>
+
+            <!-- <label for="command">Command:</label>
+            <input type="text" name="command" id="command"><br> -->
+
+            <input type="submit" value="Click here to connect to device">
+
+        </form>
+    </div>
+
+    <div class="command_container">
+        <div class="show_commands">
+            <h3>Show Commands</h1>
+            <form method="post">
+
+                <button type="submit" name="show_interfaces">Show interface brief</button>
+                <button type="submit" name="show_log">Show log</button>
+                <button type="submit" name="show_neighbor_devices">Show neighbour devices</button>
+                <button type="submit" name="show_run_config_of_port">Show run config of port</button>
+                <button type="submit" name="show_vlan_brief">Show vlan brief</button>
+
+            </form>
+        </div>
+
+        <div class="config_commands">
+            <h3>Config Commands</h1>
+            <form method="post">
+
+                <button type="submit" name="config_mfd">Configure MFD</button>
+                <button type="submit" name="config_voice_data">Configure Voice and Data</button>
+                <button type="submit" name="config_vlan">Configure VLAN</button>
+                <button type="submit" name="disable_port">Disable Port</button>
+                <button type="submit" name="enable_port">Enable Port</button>
+
+            </form>
+        </div>
+    </div>
+    {% if output %}
+        <pre>{{ output }}</pre>
+    {% endif %}
+
+</body>
+</html>
