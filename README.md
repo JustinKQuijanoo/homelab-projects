@@ -5,6 +5,7 @@ Still a WIP :computer:
 
 Planning to add the following:
 - Basic Networking Lab Setup (GNS3, VMWare, Cisco IOS, Palo Alto Firewall etc...)
+- Networking Projects/Tools (Python, Netmiko, Flask)
 - Cloud related (AWS, Azure) ☁️
 - Infrastructure as Code (Terraform)
     - Provisioning of VPC's, Subnets, VM's etc... with reusable code
