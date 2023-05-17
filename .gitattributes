@@ -2,4 +2,4 @@
 *.html linguist-detectable=true
 *.css linguist-detectable=true
 *.hcl linguist-detectable=true
-*.yml linguist-detectable=true
+*.yaml linguist-detectable=true
