@@ -1,0 +1,8 @@
+###
+# Author: Justin Quijano
+#
+# This is the default ansible 'hosts' file.
+# Here we would put the hostname and IP address
+# of the VM's to manage
+#
+###
