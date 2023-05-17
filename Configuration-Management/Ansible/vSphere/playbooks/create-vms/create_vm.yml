@@ -8,4 +8,11 @@
   - name: Create Virtual Machine
     vmware.vmware_rest.vcenter_vm:
       placement:
-        cluster: "{{ lookup('vmware.vmware_rest.cluster_moid', '/hydrohomie/host/hm_cluster') }}"
+        cluster: "{{ lookup('vmware.vmware_rest.cluster_moid', '/Hydrohomie/H2Hoe/cluster/CLU_HQPROD01_CASCADE') }}"
+        datastore: "{{ lookup('vmware.vmware_rest.datastore_moid', '/Hydrohomie/H2Hoe/datastore/DATA-HQPROD01_CASCADE') }}"
+        folder: "{{ lookup('vmware.vmware_rest.cluster_moid', '/Hydrohomie/H2Hoe/vm') }}"
+        resource_pool: "{{ lookup('vmware.vmware_rest.resource_pool_moid', '/Hydrohomie/H2Hoe/resources/RP_01') }}"
+      
+      name: hqdev01
+      guest_OS: WINDOWS_SERVER_2019
+      hardware_version: VMX_19
