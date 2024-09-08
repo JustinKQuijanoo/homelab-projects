@@ -1,5 +1,5 @@
-# networking-projects
-Networking related projects.
+# homelab-projects
+Projects related to learning Network and System Administration.
 
 Still a WIP :computer:
 
