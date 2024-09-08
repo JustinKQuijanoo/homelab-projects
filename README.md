@@ -1,9 +1,19 @@
 # homelab-projects
-Projects related to learning Network and System Administration.
+This repo contains the setup and configuration of my homelab to learning Network and System Administration.
+
+## Table of Contents
+- [PC Specifications](#pc-specifications)
+
+## PC Specifications
+- CPU: AMD Ryzen 5 3600
+- Motherboard: MSI B450 Tomahawk Max
+- GPU: NVIDIA GeForce RTX 2060 Super
+- RAM: 
+
+Technologies used:
+- GNS3 (to build network topologies )
 
 Still a WIP :computer:
-
-Test
 
 Planning to add the following:
 - Basic Networking Lab Setup (GNS3, VMWare, Cisco IOS, Palo Alto Firewall etc...)
