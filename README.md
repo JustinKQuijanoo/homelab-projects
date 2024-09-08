@@ -1,14 +1,18 @@
 # homelab-projects
-This repo contains the setup and configuration of my homelab to learning Network and System Administration.
+This repo contains the setup and configuration of my starter homelab to learning Network and System Administration.
 
 ## Table of Contents
 - [PC Specifications](#pc-specifications)
 
 ## PC Specifications
+
+PC specifications used in this homelab (until I have space for an upgraded setup)
 - CPU: AMD Ryzen 5 3600
 - Motherboard: MSI B450 Tomahawk Max
-- GPU: NVIDIA GeForce RTX 2060 Super
-- RAM: 
+- GPU: EVGA GeForce RTX 2060 Super
+- RAM: Corsair Vengeance LPX 32GB (4x8GB) DDR4 3200
+- Storage: Samsung 870 EVO SATA III SSD 1TB
+- OS: Ubuntu 22.04
 
 Technologies used:
 - GNS3 (to build network topologies )
