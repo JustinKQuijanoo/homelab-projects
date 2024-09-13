@@ -1,3 +1,7 @@
+# Objectives
+- Edit `/etc/default/named`
+- Edit `/etc/bind/named.conf.options`
+
 ## Edit `/etc/default/named`
 ```bash
 #
@@ -13,7 +17,6 @@ OPTIONS="-u bind -4"
 - Here we'll:
     - Create an ACL for trusted devices
     - Allow recursive DNS queries for the trusted devices
-
 
 ```bash
 acl "trusted" {
@@ -35,4 +38,20 @@ options {
 }
 ```
 
+
+## Edit `/etc/bind/named.conf.local`
+- Specify forward zone file
+- Specify reverse zone file
+
+```bash
+zone "hydro.homie.ca" {
+    type primary;
+    file "/etc/bind/zones/db.hydro.homie.ca"; #forward zone file path
+    allow-transfer { 192.168.122.15; }; # Primary DNS server
+};
+
+zone "122.168.192.in-addr.arpa" {
+
+}
+```
 
