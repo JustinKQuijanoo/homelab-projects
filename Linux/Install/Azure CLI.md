@@ -1,6 +1,7 @@
 # Azure CLI
 
 - Download Azure CLI 
+
 - Authenticate to Microsoft account
 
 Tested on:
