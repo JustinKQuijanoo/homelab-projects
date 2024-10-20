@@ -29,8 +29,8 @@ module "load-balancer" {
 
 # Module for ec2 instances
 module "ec2-instances" {
-  source = "./ec2-instances"
-  public_subnet_id = module.vpc.public_subnet_id
+  source            = "./ec2-instances"
+  public_subnet_id  = module.vpc.public_subnet_id
   private_subnet_id = module.vpc.private_subnet_id
   security_group_id = module.security-group.security_group_id
 }
