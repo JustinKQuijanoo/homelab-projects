@@ -3,6 +3,7 @@
 - Edit `/etc/bind/named.conf.options`
 
 ## Edit `/etc/default/named`
+- Set BIND to IPv4 mode
 ```bash
 #
 # run resolvconf?
