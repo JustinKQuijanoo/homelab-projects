@@ -1,5 +1,8 @@
 # HighAvailability ReadMe
 
+## Topology
+![AWS HA Topology](./images/aws_topology.png)
+
 Contains the Terraform code to create a high availability infrastructure.
 Creates the following:
 - 1 VPC
