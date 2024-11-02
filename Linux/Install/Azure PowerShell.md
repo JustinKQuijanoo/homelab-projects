@@ -1,4 +1,4 @@
 # Install Azure PowerShell
 
 ## Prerequisites
-- Install [[PowerShell]]
+- Install [PowerShell](PowerShell.md)
