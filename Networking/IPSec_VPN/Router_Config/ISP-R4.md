@@ -1,31 +1,26 @@
-## ISP-R4
+# ISP-R4
 
+## Complete configuration
 ```Cisco
-conf t
-int l0
-ip add 4.4.4.4 255.255.255.255
+configure terminal
 
-int g0/0
-no shut
-ip add 76.9.128.13 255.255.255.252
+interface Loopback0
+ip address 4.4.4.4 255.255.255.255
 
-int g1/0
+interface GigabitEthernet0/0
+ip address 76.9.128.13 255.255.255.252
+description Connection to ISP-R3
 no shut
-ip add 56.2.11.34 255.255.255.252
+
+interface GigabitEthernet1/0
+ip address 56.2.11.34 255.255.255.252
+description Connection to AWS-R5
+no shut
 
 router ospf 1
 router-id 4.4.4.4
 network 4.4.4.4 0.0.0.0 area 0
 network 76.9.128.12 0.0.0.3 area 0
-network 56.2.11.32 0.0.0.3 area 0
-
-do wri mem
-
-
-
-do copy run start
-
-
 
 ```
 
