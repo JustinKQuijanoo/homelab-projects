@@ -93,3 +93,22 @@ end
 ```Cisco
 show crypto map
 ```
+
+### `show crypto map` output
+```Cisco
+GTL-R2#show crypto map
+Crypto Map IPv4 "CMAP" 1 ipsec-isakmp
+        Peer = 56.2.11.33
+        Extended IP access list 100
+            access-list 100 permit ip 10.0.0.0 0.255.255.255 10.70.140.0 0.0.0.255
+        Current peer: 56.2.11.33
+        Security association lifetime: 4608000 kilobytes/3600 seconds
+        Responder-Only (Y/N): N
+        PFS (Y/N): N
+        Transform sets={
+                TSET:  { esp-aes esp-sha-hmac  } ,
+        }
+        Interfaces using crypto map CMAP:
+                GigabitEthernet1/0
+
+```
