@@ -35,6 +35,12 @@ router ospf 1
 router-id 5.5.5.5
 network 5.5.5.5 0.0.0.0 area 0
 network 10.70.140.0 0.0.0.255 area 0
+
+router bgp 64911
+network 10.70.140.0 mask 255.255.255.0
+neighbor 56.2.11.34 remote-as 21949
+neighbor 56.2.11.34 next-hop-self
+
 ```
 
 ## IPSec Config
