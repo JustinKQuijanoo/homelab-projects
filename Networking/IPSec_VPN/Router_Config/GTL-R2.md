@@ -49,41 +49,6 @@ neighbor 172.16.31.2 remote-as 10101
 neighbor 172.16.31.2 next-hop-self
 ```
 
-```Cisco
-conf t
-int l0
-ip add 2.2.2.2 255.255.255.255
-
-int g0/0 
-no shut
-ip add 172.16.31.1 255.255.255.0
-
-int g1/0
-no shut
-ip add 23.0.1.2 255.255.255.252
-
-int g2/0
-no shut
-ip add 10.4.0.1 255.255.255.0
-
-router ospf 1
-router-id 2.2.2.2
-network 2.2.2.2 0.0.0.0 area 0
-network 172.16.31.0 0.0.0.255 area 0
-network 23.0.1.0 0.0.0.3 area 0
-network 10.4.0.0 0.0.0.255 area 0
-
-do wri mem
-
-
-
-do copy run start
-
-
-
-```
-
-
 ## IPSec Config
 ```Cisco
 conf t
