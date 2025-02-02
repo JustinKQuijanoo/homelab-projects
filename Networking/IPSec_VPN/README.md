@@ -1,7 +1,7 @@
 # IPSec VPN Tunnel with Cisco 7200
 
 ## Lab topology
-![Lab topology](./Images/Topology/topology.png)
+![Lab topology](./Images/Topology/lab_topology.png)
 
 - `GTL-R2` (`23.0.1.2`) connects to AWS via `AWS-R5` (`56.2.11.33`) 
 
