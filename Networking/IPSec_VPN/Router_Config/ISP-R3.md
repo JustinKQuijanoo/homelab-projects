@@ -4,6 +4,8 @@
 ```Cisco
 configure terminal 
 
+hostname ISP-R3
+
 access-list 100 deny ip 10.0.0.0 0.255.255.255 10.70.140.0 0.0.0.255
 access-list 100 permit ip any any
 
