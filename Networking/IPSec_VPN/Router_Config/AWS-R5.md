@@ -4,6 +4,8 @@
 ```Cisco 
 configure terminal
 
+hostname AWS-R5
+
 crypto isakmp policy 1
 authentication pre-share
 crypto isakmp key Hydrohomie address 23.0.1.2
