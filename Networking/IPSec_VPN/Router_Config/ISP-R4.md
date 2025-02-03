@@ -4,6 +4,8 @@
 ```Cisco
 configure terminal
 
+hostname ISP-R4
+
 interface Loopback0
 ip address 4.4.4.4 255.255.255.255
 
