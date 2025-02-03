@@ -29,6 +29,8 @@ network 76.9.128.12 0.0.0.3 area 0
 router bgp 21949
 neighbor 23.0.1.2 remote-as 10101
 neighbor 23.0.1.2 next-hop-self
+neighbor 76.9.128.13 remote-as 21949
+neighbor 76.9.128.13 next-hop-self
 ```
 
 ## ACL to block RFC 1918 addresses
