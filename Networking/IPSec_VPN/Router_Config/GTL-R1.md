@@ -28,7 +28,7 @@ network 10.1.0.0 0.0.0.255 area 0
 network 172.16.31.0 0.0.0.255 area 0
 
 router bgp 10101
-neighbor 172.16.31.2 remote-as 10101
-neighbor 172.16.31.2 next-hop-self
+neighbor 172.16.31.1 remote-as 10101
+neighbor 172.16.31.1 next-hop-self
 ```
 
