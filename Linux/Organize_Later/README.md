@@ -16,4 +16,4 @@
 - HH-DB02
 
 ### Load balancer - Nginx
-- HH-LB01
+- [HH-LB01](./HH-LB01.md)
