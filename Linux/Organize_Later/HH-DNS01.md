@@ -155,23 +155,30 @@ $TTL	604800
 ```bash
 sudo named-checkconf
 ```
+
 #### Example output
 - if the configuration files have no syntax errors, there will be no output displayed
+
+----------------------
 
 ### Check forward zone files
 ```bash
 sudo named-checkzone hydrohomie.ca /etc/bind/zones/db.hydrohomie.ca
 ```
+
 #### Example output
 ```bash
 zone hydrohomie.ca/IN: loaded serial 7
 OK
 ```
 
+----------------------
+
 ### Check reverse zone files
 ```bash
 sudo named-checkzone 122.168.192.in-addr.arpa /etc/bind/zones/db.122.168.192
 ```
+
 #### Example output
 ```bash
 zone 122.168.192.in-addr.arpa/IN: loaded serial 7
