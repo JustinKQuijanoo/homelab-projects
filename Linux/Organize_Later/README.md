@@ -1,2 +1,2 @@
 # Topology
-![Topology](../Images/dns_topology.png)
+![Topology](./Images/dns_topology.png)
