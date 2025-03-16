@@ -22,14 +22,54 @@ network:
 ```
 
 ### Enable packet forwarding for IPv4
-- Uncomment the line in `/etc/sysctl.conf`
+- Uncomment the line below in `/etc/sysctl.conf`
 
 #### /etc/sysctl.conf
 ```bash
 net.ipv4.ip_forward=1
 ```
 
+-----------------------
+
 ### Verify
 ```bash
 sudo sysctl -p
+```
+
+## Nginx - load balancer configuration
+
+### /etc/nginx/sites-available/hydrohomie.ca
+```bash
+# NGINX Load balancer
+
+http {
+        upstream web_servers {
+                least_conn; # requests are sent to the server with least active connections
+                server 172.16.31.21 slow_start=30s;
+                server 172.16.31.22;
+        }
+}
+
+server {
+        listen 8080;
+        server_name hydrohomie.ca www.hydrohomie.ca;
+
+        location / {
+                proxy_pass http://web_servers;
+                proxy_set_header HOST $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+        }
+}
+```
+
+### Link `sites-available` to `sites-enabled`
+```bash
+sudo ln -s /etc/nginx/sites-available/hydrohomie.ca /etc/nginx/sites-enabled/hydrohomie.ca
+```
+
+### Test nginx configuration
+```bash
+service nginx configtest
 ```
