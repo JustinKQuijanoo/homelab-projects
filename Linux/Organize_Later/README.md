@@ -4,7 +4,7 @@
 ## Configurations
 
 ### DNS - BIND9
-- HH-DNS01
+- [HH-DNS01](./HH-DNS01.md)
 - HH-DNS02
 
 ### Web server - Nginx
