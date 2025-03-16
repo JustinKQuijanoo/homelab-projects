@@ -23,7 +23,10 @@ network:
           via: 192.168.122.1
 ```
 
-## /etc/bind/named.conf.options
+## DNS Configuration
+### /etc/bind/named.conf.options
+- create trusted list to allow recursive DNS
+
 ```bash
 acl "trusted" {
 	192.168.122.11;	#hh-dns01
@@ -56,6 +59,7 @@ options {
 ```
 
 ### /etc/bind/named.conf.local
+- specify forward and reverse zones
 ```bash
 // Consider adding the 1918 zones here, if they are not used in your
 // organization
@@ -82,6 +86,7 @@ sudo touch /etc/bind/zones/db.122.168.192
 ```
 
 ### /etc/bind/zones/db.hydrohomie.ca
+- forward zone
 ```bash
 ;
 ; BIND data file for local loopback interface
@@ -112,3 +117,54 @@ hh-ws04.hydrohomie.ca.		IN	A	192.168.122.24
 ; 192.168.122.0/24 - A records
 PILOT-SM0K3Y.hydrohomie.ca.	IN	A	192.168.122.117
 ```
+
+### /etc/bind/zones/db.122.168.192
+```bash
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	hh-dns01.hydrohomie.ca. admin.hydrohomie.ca. (
+			      6		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+; name servers - NS records
+	IN	NS	hh-dns01.hydrohomie.ca.
+	IN	NS	hh-dns02.hydrohomie.ca.
+	IN	NS	hh-ws01.hydrohomie.ca.
+	IN	NS	hh-ws02.hydrohomie.ca.
+	IN	NS	hh-ws03.hydrohomie.ca.
+	IN	NS	hh-ws04.hydrohomie.ca.
+
+; PTR Records
+168.122.11	IN	PTR	hh-dns01.hydrohomie.ca.		;
+168.122.12	IN	PTR	hh-dns02.hydrohomie.ca.		;
+168.122.21	IN	PTR	hh-ws01.hydrohomie.ca.		;
+168.122.22	IN	PTR	hh-ws02.hydrohomie.ca.		;
+168.122.23	IN	PTR	hh-ws03.hydrohomie.ca.		;
+168.122.24	IN	PTR	hh-ws04.hydrohomie.ca.		;
+168.122.117	IN	PTR	PILOT-SM0K3Y.hydrohomie.ca.	;
+```
+
+## Configuration check commands
+- confirm there's no errors or misconfigurations
+
+### Check BIND configuration syntax
+```bash
+sudo named-checkconf
+```
+
+### Check forward zone files
+```bash
+sudo named-checkzone hydrohomie.ca /etc/bind/zones/db.hydrohomie.ca
+```
+
+
+### Check reverse zone files
+```bash
+sudo named-checkzone 122.168.192.in-addr.arpa /etc/bind/zones/db.122.168.192
+```
+
+
